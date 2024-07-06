@@ -1,0 +1,24 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Run system diagnostics
+    cmds:
+      - task: node
+      - task: java
+      - task: docker
+
+  node:
+    desc: Run Node.js diagnostics
+    cmds:
+      - ./check_command_version.sh 'node --version' 'Node' '.node_version' | awk '{print "🚀 " $0}'
+
+  java:
+    desc: Run Java diagnostics
+    cmds:
+      - ./check_command_version.sh 'java --version' 'Java' | awk '{print "🔥 " $0}'
+
+  docker:
+    desc: Run Docker diagnostics
+    cmds:
+      - ./check_command_version.sh 'docker --version' 'Docker' | awk '{print "🐳 " $0}'

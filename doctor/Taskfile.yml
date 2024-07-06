@@ -1,0 +1,12 @@
+version: '3'
+
+silent: true
+
+includes:
+  doctor: ./Taskfile.doctor.yml
+
+tasks:
+  default:
+    desc: Show commands
+    cmds:
+      - task -l --sort none
