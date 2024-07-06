@@ -3,10 +3,16 @@ version: '3'
 silent: true
 
 includes:
-  doctor: ./Taskfile.doctor.yml
+  doctor:
+    taskfile: .task/Taskfile.doctor.yml
+    dir: .task
 
 tasks:
   default:
     # desc: Show commands
     cmds:
       - task -l --sort none
+  doctor:
+    desc: Run system diagnostics
+    cmds:
+      - task: doctor:default
