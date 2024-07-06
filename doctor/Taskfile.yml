@@ -7,6 +7,6 @@ includes:
 
 tasks:
   default:
-    desc: Show commands
+    # desc: Show commands
     cmds:
       - task -l --sort none
