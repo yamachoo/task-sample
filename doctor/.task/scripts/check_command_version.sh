@@ -23,7 +23,7 @@ echo ""
 
 if [ $command_exit_code -ne 0 ]; then
   echo "[ ] Failed to verify the $name development environment."
-  exit 1
+  exit
 fi
 
 # If version_file is provided, read expected version from the file
@@ -32,7 +32,7 @@ if [ -n "$version_file" ]; then
     expected_version=$(cat "$version_file")
   else
     echo "[ ] Version file $version_file does not exist."
-    exit 1
+    exit
   fi
 fi
 
@@ -46,7 +46,7 @@ if [ -n "$expected_version" ]; then
     echo "[✓] Successfully verified the $name development environment."
   else
     echo "[ ] Version mismatch: expected $expected_version but found $actual_version"
-    exit 1
+    exit
   fi
 else
   echo "[✓] Successfully verified the $name development environment."

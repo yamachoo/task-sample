@@ -16,4 +16,4 @@ tasks:
   doctor:
     desc: Run system diagnostics
     cmds:
-      - task: doctor:default
+      - task -o prefixed doctor:default

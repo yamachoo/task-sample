@@ -2,8 +2,7 @@ version: '3'
 
 tasks:
   default:
-    desc: Run system diagnostics
-    internal: true
+    # desc: Run system diagnostics
     cmds:
       - task: node
       - task: java
@@ -14,18 +13,21 @@ tasks:
     internal: true
     dir: scripts
     cmds:
-      - ./check_command_version.sh 'node --version' 'Node' '.node_version' | awk '{print "🚀 " $0}'
+      - ./check_command_version.sh 'node --version' 'Node' '.node_version'
+    prefix: 🚀
 
   java:
     desc: Run Java diagnostics
     internal: true
     dir: scripts
     cmds:
-      - ./check_command_version.sh 'java --version' 'Java' | awk '{print "🔥 " $0}'
+      - ./check_command_version.sh 'java --version' 'Java'
+    prefix: 🔥
 
   docker:
     desc: Run Docker diagnostics
     internal: true
     dir: scripts
     cmds:
-      - ./check_command_version.sh 'docker --version' 'Docker' | awk '{print "🐳 " $0}'
+      - ./check_command_version.sh 'docker --version' 'Docker'
+    prefix: 🐳
