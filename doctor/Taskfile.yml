@@ -12,6 +12,7 @@ tasks:
     # desc: Show commands
     cmds:
       - task -l --sort none
+
   doctor:
     desc: Run system diagnostics
     cmds:
